@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F7F6F1;
+    --bg-sec: #E9EDE5;
+    --primary-sage: #657B68;
+    --deep-forest: #344B3B;
+    --charcoal: #252A26;
+    --muted: #777C74;
+    --linen: #E7DDD0;
+    --border: #E6E5DD;
+  }
+
+  body {
+    background-color: #F7F6F1;
+    color: #252A26;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F6F1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D0D9D1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #657B68;
+  }
+}
+
+/* Drum rotation animation */
+@keyframes drumRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-drum {
+  animation: drumRotate 18s linear infinite;
+}
+
+.animate-drum-fast {
+  animation: drumRotate 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Gentle water ripple / wave effect */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 4s ease-in-out infinite;
+}
+
+/* Glass & subtle linen card texture */
+.linen-card {
+  background: #FFFFFF;
+  border: 1px solid #E6E5DD;
+  box-shadow: 0 4px 20px -2px rgba(37, 42, 38, 0.04), 0 2px 6px -1px rgba(37, 42, 38, 0.02);
+}
+
+.linen-card:hover {
+  border-color: #D0D9D1;
+  box-shadow: 0 8px 30px -4px rgba(37, 42, 38, 0.07), 0 4px 10px -2px rgba(37, 42, 38, 0.03);
+}
+
+/* Mobile preview frame container */
+.mobile-frame-container {
+  box-shadow: 0 25px 60px -15px rgba(36, 53, 41, 0.2), 0 0 0 1px rgba(36, 53, 41, 0.08);
+}
